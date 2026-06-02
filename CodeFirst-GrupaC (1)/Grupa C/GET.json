@@ -1,0 +1,71 @@
+[
+  {
+    "professorId": 1,
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "email": "alice.johnson@university.edu",
+    "name": "Computer Science",
+    "courses": [
+      {
+        "courseId": 1,
+        "title": "Database Systems",
+        "credits": 5,
+        "semester": 1,
+        "enrollments": [
+          {
+            "grade": 4.5,
+            "status": "Completed",
+            "student": {
+              "studentId": 1,
+              "firstName": "John",
+              "lastName": "Wick",
+              "email": "john.wick@student.edu",
+              "enrollmentYear": 2022
+            }
+          },
+          {
+            "grade": 3.5,
+            "status": "Completed",
+            "student": {
+              "studentId": 2,
+              "firstName": "Anna",
+              "lastName": "Kowalska",
+              "email": "anna.kowalska@student.edu",
+              "enrollmentYear": 2023
+            }
+          }
+        ]
+      },
+      {
+        "courseId": 5,
+        "title": "Data Structures",
+        "credits": 5,
+        "semester": 1,
+        "enrollments": [
+          {
+            "grade": 4.8,
+            "status": "Completed",
+            "student": {
+              "studentId": 1,
+              "firstName": "John",
+              "lastName": "Wick",
+              "email": "john.wick@student.edu",
+              "enrollmentYear": 2022
+            }
+          },
+          {
+            "grade": 4.2,
+            "status": "Completed",
+            "student": {
+              "studentId": 3,
+              "firstName": "Peter",
+              "lastName": "Nowak",
+              "email": "peter.nowak@student.edu",
+              "enrollmentYear": 2021
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

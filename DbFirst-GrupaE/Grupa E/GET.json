@@ -1,0 +1,10 @@
+[
+  {
+    "courseId": 1,
+    "title": "C# Fundamentals",
+    "lessonsCount": 12,
+    "studentsCount": 34,
+    "averageRating": 4.7,
+    "certificatesIssued": 20
+  }
+]

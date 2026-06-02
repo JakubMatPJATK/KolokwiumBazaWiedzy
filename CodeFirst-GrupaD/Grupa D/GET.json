@@ -1,0 +1,51 @@
+[
+  {
+    "guestId": 1,
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john.smith@email.com",
+    "phone": "123456789",
+    "bookings": [
+      {
+        "bookingId": 1,
+        "checkIn": "2026-06-01",
+        "checkOut": "2026-06-05",
+        "roomNumber": 101,
+        "bookingServices": [
+          {
+            "serviceDate": "2026-06-02",
+            "name": "Breakfast",
+            "price": 25
+          },
+          {
+            "serviceDate": "2026-06-03",
+            "name": "Laundry",
+            "price": 15
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "guestId": 2,
+    "firstName": "Anna",
+    "lastName": "Brown",
+    "email": "anna.brown@email.com",
+    "phone": "234567891",
+    "bookings": [
+      {
+        "bookingId": 2,
+        "checkIn": "2026-06-03",
+        "checkOut": "2026-06-07",
+        "roomNumber": 102,
+        "bookingServices": [
+          {
+            "serviceDate": "2026-06-03",
+            "name": "Airport Pickup",
+            "price": 60
+          }
+        ]
+      }
+    ]
+  }
+]

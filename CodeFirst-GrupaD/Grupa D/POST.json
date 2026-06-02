@@ -1,0 +1,11 @@
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "phone": "123456789",
+  "booking": {
+    "roomId": 3,
+    "checkIn": "2026-05-27",
+    "checkOut": "2026-05-28"
+  }
+}

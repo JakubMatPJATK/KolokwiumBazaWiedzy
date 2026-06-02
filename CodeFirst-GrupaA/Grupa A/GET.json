@@ -1,0 +1,77 @@
+[
+  {
+    "firstName": "Anna",
+    "lastName": "Kowalska",
+    "dateOfBirth": "1990-03-15T00:00:00",
+    "phone": "123456789",
+    "appointments": [
+      {
+        "appointmentId": 1,
+        "doctor": {
+          "firstName": "Adam",
+          "lastName": "Mazur",
+          "specialization": "Cardiology",
+          "phone": "111222333"
+        },
+        "appointmentDate": "2026-05-20",
+        "status": "Completed",
+        "appointmentServices": [
+          {
+            "quantity": 1,
+            "performedAt": "2026-05-20",
+            "medicalService": {
+              "serviceId": 1,
+              "name": "General Consultation",
+              "description": "Basic medical consultation",
+              "price": 150,
+              "durationMinutes": 30
+            }
+          },
+          {
+            "quantity": 1,
+            "performedAt": "2026-05-20",
+            "medicalService": {
+              "serviceId": 3,
+              "name": "ECG",
+              "description": "Electrocardiogram examination",
+              "price": 120,
+              "durationMinutes": 20
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "firstName": "Jan",
+    "lastName": "Nowak",
+    "dateOfBirth": "1985-07-22T00:00:00",
+    "phone": "234567891",
+    "appointments": [
+      {
+        "appointmentId": 2,
+        "doctor": {
+          "firstName": "Ewa",
+          "lastName": "Kaczmarek",
+          "specialization": "Dermatology",
+          "phone": "222333444"
+        },
+        "appointmentDate": "2026-05-21",
+        "status": "Completed",
+        "appointmentServices": [
+          {
+            "quantity": 1,
+            "performedAt": "2026-05-21",
+            "medicalService": {
+              "serviceId": 4,
+              "name": "Skin Examination",
+              "description": "Dermatological skin check",
+              "price": 200,
+              "durationMinutes": 40
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

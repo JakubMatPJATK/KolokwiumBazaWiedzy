@@ -1,0 +1,10 @@
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "dateOfBirth": "2002-05-26",
+  "phone": "123456789",
+  "appointment": {
+    "doctorId": 1,
+    "appointmentDate": "2026-05-27"
+  }
+}
