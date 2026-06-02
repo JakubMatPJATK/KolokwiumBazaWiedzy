@@ -1,9 +1,0 @@
-{
-  "professorsLastName": "Johnson",
-  "title": "New Course",
-  "credits": 6,
-  "semester": 4,
-  "students": [
-    1, 3, 4
-  ]
-}
