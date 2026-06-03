@@ -63,3 +63,97 @@ dotnet run
 | .NET 10 | **.NET 9** |
 
 Wzorce kodu: `WZORCE.md`
+
+
+# Wzorce (PJATK + kolokwium)
+
+## Kontroler – obsługa wyjątków
+
+```csharp
+[HttpGet("{id:int}")]
+public async Task<ActionResult<BookResponse>> GetById(int id, CancellationToken ct)
+{
+    try
+    {
+        return Ok(await service.GetBookAsync(id, ct));
+    }
+    catch (NotFoundException e)
+    {
+        return NotFound(e.Message);
+    }
+}
+
+[HttpPost]
+public async Task<IActionResult> Create([FromBody] BookRequest req, CancellationToken ct)
+{
+    try
+    {
+        await service.AddBookAsync(req, ct);
+        return Created();
+    }
+    catch (ConflictException e)
+    {
+        return Conflict(e.Message);
+    }
+}
+```
+
+## Serwis – NotFound / Conflict
+
+```csharp
+return await ctx.Books
+    .Where(e => e.Id == id)
+    .Select(e => new BookResponse(...))
+    .FirstOrDefaultAsync(ct)
+    ?? throw new NotFoundException($"Book with id {id} not found");
+
+if (await ctx.Books.AnyAsync(e => e.Title == request.Title, ct))
+    throw new ConflictException($"Book with title {request.Title} already exists");
+```
+
+## GET z filtrem opcjonalnym
+
+```csharp
+.Where(e => title == null || e.Title.Contains(title))
+```
+
+## Transakcja jawna (DELETE / wiele tabel)
+
+```csharp
+await using var transaction = await ctx.Database.BeginTransactionAsync(ct);
+try
+{
+    await ctx.Rentals.Where(e => e.BookId == id).ExecuteDeleteAsync(ct);
+    var removed = await ctx.Books.Where(e => e.Id == id).ExecuteDeleteAsync(ct);
+    if (removed == 0)
+        throw new NotFoundException(...);
+    await transaction.CommitAsync(ct);
+}
+catch
+{
+    await transaction.RollbackAsync(ct);
+    throw;
+}
+```
+
+## Jedna transakcja przez SaveChanges
+
+Wiele operacji na `ctx` + jedno `SaveChangesAsync()` = jedna transakcja (jak POST z gatunkami w przykładzie GitHub).
+
+## DatabaseContext – schemat
+
+```json
+"DB": { "DefaultSchema": "twoj-schemat" }
+```
+
+```csharp
+modelBuilder.HasDefaultSchema(configuration["DB:DefaultSchema"]);
+```
+
+## Fluent API
+
+```csharp
+modelBuilder.Entity<Enrollment>().HasKey(e => new { e.CourseId, e.StudentId });
+modelBuilder.Entity<Order>().Property(o => o.UserId).HasColumnName("Users_UserId");
+```
+
