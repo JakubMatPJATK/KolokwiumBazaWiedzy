@@ -1,0 +1,35 @@
+@Kolokwium_HostAddress = http://localhost:5180
+
+###
+
+GET {{Kolokwium_HostAddress}}/api/Example
+
+###
+
+GET {{Kolokwium_HostAddress}}/api/Example?name=test
+
+###
+
+GET {{Kolokwium_HostAddress}}/api/Example/1
+
+###
+
+POST {{Kolokwium_HostAddress}}/api/Example
+Content-Type: application/json
+
+{
+  "name": "Testowy rekord"
+}
+
+###
+
+PUT {{Kolokwium_HostAddress}}/api/Example/1
+Content-Type: application/json
+
+{
+  "name": "Zmieniona nazwa"
+}
+
+###
+
+DELETE {{Kolokwium_HostAddress}}/api/Example/1
